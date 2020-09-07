@@ -286,7 +286,6 @@ class Form extends Component {
                     <DatePicker
                         selected={new Date(value)}
                         onSelect={this.onDateChange.bind(null, field)}
-                        startOpen={true}
                     />
                     <label className={`form-field-label ${field.active && `active`}`} htmlFor={field.name}>{this.state.errors[field.name] ? this.state.errors[field.name] : field.label}</label>
                 </React.Fragment>

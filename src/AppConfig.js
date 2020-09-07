@@ -120,7 +120,10 @@ export const FILTER_OPTIONS = [
         "label": "Event Name",
         "type": "text",
         "name": "event",
-        "defaultValue": ""
+        "defaultValue": "",
+        "validations": {
+            "required": true,
+        }
        
     },
     {
@@ -134,14 +137,20 @@ export const FILTER_OPTIONS = [
         "label": "Description",
         "type": "text",
         "name": "description",
-        "defaultValue": ""
+        "defaultValue": "",
+        "validations": {
+            "required": true,
+        }
        
     },
     {
         "label": "Venue",
         "type": "text",
         "name": "venue",
-        "defaultValue": ""
+        "defaultValue": "",
+        "validations": {
+            "required": true,
+        }
         
     },
     {
@@ -164,7 +173,10 @@ export const FILTER_OPTIONS = [
             },
             
                         
-        ]
+        ],
+        "validations": {
+            "required": true,
+        }
     },
     
     
