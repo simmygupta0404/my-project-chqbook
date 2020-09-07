@@ -1,0 +1,471 @@
+$Black: #000;
+$White: #fff;
+$Blue: #00b9f5;
+$DBlue: #012b72;
+// $Red: #ff4b55;
+// $Yellow: #f5a623;
+// $Green: #21c17a;
+$Orange: #ffa400;
+$borderCol: #ebebeb;
+$DBlack: #182233;
+$LGrey: #999;
+$TextCol: #222;
+// $subTextCol: #7b93b4;
+$DGrey: #444;
+$LBlack: #333;
+$greyBG: #fafcfb;
+$insuText: #f05a22;
+$GreyBorder: #e6ebf3;
+$LBlue: #deeaee;
+
+
+$Green: #00C673;
+$Yellow: #FF9E00;
+$Red: #FF4B55;
+$subTextCol: #536E92;
+$SectionBG: #f6f8fc;
+
+.clear {
+  clear: both;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disFlex {
+  display: flex;
+}
+
+.flexDisRow {
+  flex-direction: row;
+}
+
+.flexDisCol {
+  flex-direction: column;
+}
+
+.overHidden {
+  overflow: hidden;
+}
+
+.posAbo {
+  position: absolute;
+}
+
+.posRel {
+  position: relative;
+}
+
+.posFix {
+  position: fixed;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.inBlock {
+  display: inline-block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.whiteBG {
+  background: $White;
+}
+
+.blueBG {
+  background: $DBlue;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+//Adding New Mixin Kavita Start
+.row {
+  @extend .disFlex;
+  @extend .flexDisRow;
+}
+
+.col {
+  @extend .disFlex;
+  @extend .flexDisCol;
+}
+
+.BB {
+  border-bottom: 1px solid $borderCol;
+}
+
+.Bfull {
+  border: 1px solid $borderCol;
+}
+
+.BT {
+  border-top: 1px solid $borderCol;
+}
+
+.noPadding{
+  padding: 0;
+}
+
+.noMargin{
+  margin: 0;
+}
+
+.overHidden {
+  overflow: hidden;
+}
+
+.posRel {
+  position: relative;
+}
+
+.posAbo {
+  position: absolute;
+}
+
+@mixin fontStyle($size: false, $color: false, $weight: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin ellipsis($line) {
+  // lines: $line;
+  text-overflow: ellipsis;
+}
+
+@mixin align($content, $items) {
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fontIcon($size, $color: false) {
+  font-size: $size;
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin padd($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin marg($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+//Adding New Mixing Kavita End
+@mixin textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bShadow($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($pixels) {
+  opacity: $pixels;
+}
+
+@mixin padd($pixels) {
+  padding: $pixels;
+}
+
+@mixin marg($pixels) {
+  margin: $pixels;
+}
+
+@mixin pos($type) {
+  position: $type;
+}
+
+@mixin fWeight($fWeight) {
+  font-weight: $fWeight;
+}
+
+@mixin fSize($fSize) {
+  font-size: $fSize;
+}
+
+@mixin lHeight($lHeight) {
+  line-height: $lHeight;
+}
+
+@mixin bTop($value) {
+  border-top: $value;
+}
+
+@mixin display($type) {
+  display: $type;
+}
+
+@mixin tAlign($type) {
+  text-align: $type;
+}
+
+@mixin overflow($type) {
+  overflow: $type;
+}
+
+@mixin tTransform($type) {
+  text-transform: $type;
+}
+
+@mixin tDecor($type) {
+  text-decoration: $type;
+}
+
+@mixin zIndex($zIndex) {
+  z-index: $zIndex;
+}
+
+@mixin bg-pos($pos) {
+  background-position: $pos;
+}
+
+@mixin top($value) {
+  top: $value;
+}
+
+@mixin bottom($value) {
+  bottom: $value;
+}
+
+@mixin left($value) {
+  left: $value;
+}
+
+@mixin right($value) {
+  right: $value;
+}
+
+//Mixins for creating more color from the base colors defined in framework
+
+@mixin bg-opacity($color, $opacity) {
+  background: rgba($color, $opacity);
+}
+.noBorder {
+  border: 0 !important;
+}
+
+
+.form-wrap{
+    width: 60%;
+    .field-wrap{
+        @extend .disFlex;
+        @include marg(0 20px 20px 0);
+
+        .inside-form-heading{
+            @include fontStyle(16px, $TextCol, 600);
+        }
+        .floating-form-field {
+            flex: 1;
+            label.select-label {
+                transform: translate(0, 20px);
+                padding: 0 16px;
+                &.shift {
+                    transform: translate(0, 12px);
+                    padding: 0 16px;
+                }
+            }
+            &.file,&.fileIcon {
+                border: 0;
+            }
+            &.fileIcon {
+                flex-flow: column;
+                .file-uploader {
+                    &__heading {
+                        @include fontStyle($size: 16px, $color: $DBlack, $weight: 600);
+                        @include padd(15px 0 20px 0);
+                    }
+                    &__hint-text {
+                        padding-top: 16px;
+                        @include fontStyle($size: 12px, $color: $DGrey, $weight: 400);
+                    }
+                }
+
+            }
+            position: relative;
+            display: flex;
+            flex-flow: column-reverse;
+            @extend .Bfull;
+            @include border-radius(2px);
+
+            &.error {
+                @include fontStyle(12px, $Red, 400);
+                border-color: $Red;
+
+              .form-field-label {
+                color: $Red;
+              }
+
+              .select-box-options-list {
+                color: #444;
+              }
+            }
+
+            .form-field-label {
+                @include fontStyle(14px, $subTextCol, 600);
+                @include transition(all 0.2s);
+                pointer-events: none;
+
+                transform: translate(16px, 10px);
+            }
+            .input-text-field {
+                @include fontStyle(14px, $Blue, false);
+                position: absolute;
+                top: 18px;
+                right: 10px;
+                cursor: pointer;
+                outline: none;
+            }
+            .html-text-field {
+                @include fontStyle(14px, $Blue, false);
+                position: absolute;
+                top: 0;
+                right: 10px;
+                left: 0;
+                text-decoration: underline;
+                cursor: pointer;
+                outline: none;
+            }
+            input.input-text {
+                @include padd(7px 100px 12px 16px);
+                @include fSize(14px);
+            }
+
+            input[type=text],
+            [type=email],
+            [type=number] {
+                @include padd(7px 16px 12px 16px);
+                @include fSize(14px);
+            }
+            input[type="text"]:disabled {
+                pointer-events: none;
+                background: $SectionBG;
+            }
+
+            textarea  {
+                @include fSize(14px);
+                @include border-radius(4px);
+                @include padd(7px 16px 12px 16px);
+                background: $White;
+                min-width: 0;
+                min-height: 0;
+                resize: none;
+                border: none;
+                margin-top: 10px;
+            }
+            &.textarea-wrapper {
+                background: $White;
+            }
+
+            // Float Labels with CSS
+            input {
+                @include padd(0);
+                @include fontStyle(14px, $DBlack, false);
+                // @extend .fullWidth;
+                @include transition(all 0.2s);
+                background: $White;
+                border: 0;
+            }
+
+            input:focus {
+                outline: 0;
+            }
+
+            .with-placeholder {
+                transform-origin: left bottom;
+                transform: translate(0, 18px);
+                padding: 0 16px;
+            }
+
+            ::-webkit-input-placeholder {
+                opacity: 0;
+            }
+
+            .without-placeholder,
+            input:focus+label {
+                transform: translate(0, 10px);
+                padding: 0 16px;
+                cursor: pointer;
+            }
+            .data-row {
+                @include padd(20px);
+                margin-bottom: 0;
+                .data-row_data-wrapper {
+                    @include padd(0);
+                    @include marg(0 0 12px 0);
+                    &:last-of-type{
+                        margin-bottom: 0;
+                        color: $DBlack;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.field-hints {
+    p {
+        @include fontStyle(12px, $subTextCol, false);
+        padding-bottom: 3px;
+    }
+}

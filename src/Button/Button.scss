@@ -1,0 +1,183 @@
+$White: #fff;
+$Blue: rgb(190, 152, 159);
+$borderCol: #ebebeb;
+$GreyBorder: #e6ebf3;
+$subTextCol: #536E92;
+ 
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+  }
+
+  @mixin padd($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  }
+
+  @mixin padd($pixels) {
+    padding: $pixels;
+  }
+
+
+@mixin opacity($pixels) {
+    opacity: $pixels;
+  }
+  @mixin fSize($fSize) {
+    font-size: $fSize;
+  }
+
+
+  @mixin lHeight($lHeight) {
+    line-height: $lHeight;
+  }
+
+  @mixin bg-opacity($color, $opacity) {
+    background: rgba($color, $opacity);
+  }
+  @mixin fWeight($fWeight) {
+    font-weight: $fWeight;
+  }
+
+  @mixin marg($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  }
+  
+
+
+.btn {
+  border-width: 0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  @include fWeight(600);
+  @include fSize(14px);
+
+  &:hover {
+    @extend .isPrimary;
+  }
+}
+
+.btnText {
+  color: $Blue;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+.isPrimary {
+  background: $Blue;
+  color: $White;
+}
+
+.isSecondary {
+  background: $White;
+  color: $Blue;
+  border: 1px solid $Blue;
+}
+
+.isTertiary {
+  background: $White;
+  color: $Blue;
+  border: 1px solid transparent;
+}
+
+.isQuaternary {
+  background: $White;
+  color: $subTextCol;
+  border: 1px solid $GreyBorder;
+
+  &:hover {
+    background: $White;
+    color: $subTextCol;
+  }
+}
+
+.btnDisabled {
+  pointer-events: none;
+  color: $White;
+  @include bg-opacity( $subTextCol,0.7);
+
+  &:hover {
+    background: $subTextCol;
+    color: $White;
+  }
+}
+
+.isMedium {
+  @include padd(14px 15px);
+  @include lHeight(1);
+}
+
+.isLarge {
+  @include padd(15px 20px);
+}
+
+.isSmall {
+  @include fSize(11px);
+  @include padd(6px 10px);
+}
+
+.isfull {
+  width: 100% !important;
+  @include padd(25px 20px);
+}
+
+.isActive {
+  background: $Blue !important;
+  color: $White !important;
+}
+
+.btn[disabled],
+.isDisabled {
+  background: #99ddf3;
+  border: $borderCol;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  @include opacity(0.5);
+}
+
+.btn-grp {
+  .btn {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-icon {
+  color: $Blue;
+  @include padd(8px 16px);
+  border: 1px solid $GreyBorder;
+  background: $White;
+  display: flex;
+  align-items: center;
+
+  img {
+    @include widthHeight(24px, 24px);
+    margin-right: 8px;
+  }
+
+  i {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background: none;
+    color: $Blue;
+  }
+}

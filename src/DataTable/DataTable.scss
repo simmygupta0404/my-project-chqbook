@@ -1,0 +1,412 @@
+$Black: #000;
+$White: #fff;
+$Blue: #00b9f5;
+$DBlue: #012b72;
+// $Red: #ff4b55;
+// $Yellow: #f5a623;
+// $Green: #21c17a;
+$Orange: #ffa400;
+$borderCol: #ebebeb;
+$DBlack: #182233;
+$LGrey: #999;
+$TextCol: #222;
+// $subTextCol: #7b93b4;
+$DGrey: #444;
+$LBlack: #333;
+$greyBG: #fafcfb;
+$insuText: #f05a22;
+$GreyBorder: #e6ebf3;
+$LBlue: #deeaee;
+
+
+$Green: #00C673;
+$Yellow: #FF9E00;
+$Red: #FF4B55;
+$subTextCol: #536E92;
+$SectionBG: #f6f8fc;
+
+
+
+
+.posFix {
+  position: fixed;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.inBlock {
+  display: inline-block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.whiteBG {
+  background: $White;
+}
+
+.blueBG {
+  background: $DBlue;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+//Adding New Mixin Kavita Start
+.row {
+	display: flex;
+  @extend .flexDisRow;
+}
+.flexDisRow {
+	flex-direction: row;
+  }
+
+
+.BB {
+  border-bottom: 1px solid $borderCol;
+}
+
+
+.BT {
+  border-top: 1px solid $borderCol;
+}
+
+
+
+@mixin fontStyle($size: false, $color: false, $weight: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin ellipsis($line) {
+  // lines: $line;
+  text-overflow: ellipsis;
+}
+
+@mixin align($content, $items) {
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fontIcon($size, $color: false) {
+  font-size: $size;
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin padd($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin marg($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+//Adding New Mixing Kavita End
+@mixin textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bShadow($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($pixels) {
+  opacity: $pixels;
+}
+
+@mixin padd($pixels) {
+  padding: $pixels;
+}
+
+@mixin marg($pixels) {
+  margin: $pixels;
+}
+
+@mixin pos($type) {
+  position: $type;
+}
+
+@mixin fWeight($fWeight) {
+  font-weight: $fWeight;
+}
+
+@mixin fSize($fSize) {
+  font-size: $fSize;
+}
+
+@mixin lHeight($lHeight) {
+  line-height: $lHeight;
+}
+
+@mixin bTop($value) {
+  border-top: $value;
+}
+
+@mixin display($type) {
+  display: $type;
+}
+
+@mixin tAlign($type) {
+  text-align: $type;
+}
+
+@mixin overflow($type) {
+  overflow: $type;
+}
+
+@mixin tTransform($type) {
+  text-transform: $type;
+}
+
+@mixin tDecor($type) {
+  text-decoration: $type;
+}
+
+@mixin zIndex($zIndex) {
+  z-index: $zIndex;
+}
+
+@mixin bg-pos($pos) {
+  background-position: $pos;
+}
+
+@mixin top($value) {
+  top: $value;
+}
+
+@mixin bottom($value) {
+  bottom: $value;
+}
+
+@mixin left($value) {
+  left: $value;
+}
+
+@mixin right($value) {
+  right: $value;
+}
+
+//Mixins for creating more color from the base colors defined in framework
+
+@mixin bg-opacity($color, $opacity) {
+  background: rgba($color, $opacity);
+}
+.noBorder {
+  border: 0 !important;
+}
+
+
+.tableWall {
+	@media screen and (max-width: 480px) {
+		  width: 185%;
+	  }
+	  width: 100%;
+	.Table {
+		display: flex;
+		flex-flow: column nowrap;
+		font-size: 16px;
+		// @extend .BB;
+		@extend .BT;
+		width: 100%;
+		// flex-wrap: wrap;
+		// overflow-x: auto;
+
+        .hide {
+            display: none;
+        }
+		.TableHeader {
+			
+			background: $SectionBG;
+			display: flex;
+			flex-flow: row nowrap;
+            @extend .uppercase;
+            @include padd(0 0 0 40px);
+
+            .TableRowItem{
+                @include fontStyle(12px, $subTextCol, 700);
+            }
+		}
+		.FormTableRow {
+			border-bottom: 1px solid $borderCol;
+			.TableRow {
+				display: flex;
+				flex-flow: row nowrap;
+				background: $White;
+				@include fSize(13px);
+				@include padd(10px 0 10px 40px);
+				&.rowClickable {
+					@extend .cursor;
+				}
+				&.selected {
+					background: $Blue;
+					color: $White;
+					.TableRowItem {
+						border-color: $Blue;
+						a {
+							color: $White;
+						}
+					}
+				}
+				.multiRowInfo {
+					span {
+						margin: 0 0 3px;
+						&:first-child {
+							font-size: 14px;
+							display: block;
+						}
+						&:not(:first-child):last-child {
+							@include fontStyle(12px, $LGrey, 300);
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		.TableRowItem {
+			display: flex;
+			@include padd(12px 8px);
+			flex: 1;
+			// min-width: 145px;
+			justify-content: space-between;
+            align-items: center;
+            @include fontStyle(14px, $subTextCol, false);
+
+			&:before {
+				content: none;
+			}
+			a {
+				@extend .inBlock;
+				@include fontStyle(false, $TextCol, false);
+			}
+			img {
+				@include widthHeight(30px, 30px);
+			}
+			.select-row {
+				border: 2px solid $subTextCol;
+				@include padd(4px);
+				@include border-radius(50%);
+				@include widthHeight(20px, 20px);
+			}
+			.selected-row {
+				border: 2px solid $Blue;
+				@include padd(3px);
+				@include border-radius(50%);
+				@include widthHeight(20px, 20px);
+				.icon {
+					@include widthHeight(10px, 10px);
+					background: $Blue;
+					@include border-radius(50%);
+				}
+			}
+			.selected-row-box {
+				border: 2px solid $Blue;
+				@include padd(3px);
+				@include widthHeight(20px, 20px);
+				.icon {
+					@include widthHeight(10px, 10px);
+					background: $Blue;
+				}
+			}
+        }
+        .small-col {
+            flex-grow: 0;
+            flex-shrink: 0;
+			flex-basis: 35px;
+			.arrow-group{
+				@extend .row;
+				@extend .cursor;
+				.arrow{
+					@include padd(5px 8px);
+					color: $GreyBorder;
+					i{
+						border-width: 0 2px 2px 0;
+					}
+				}
+				.next-isActive{
+					color: $subTextCol;
+				}
+			}
+        }
+        .small-col-arrow {
+            flex-grow: 0;
+            flex-shrink: 0;
+			flex-basis: 64px;
+			.arrow-group{
+				@extend .row;
+				@extend .cursor;
+				.arrow{
+					@include padd(5px 8px);
+					color: $GreyBorder;
+					i{
+						border-width: 0 2px 2px 0;
+					}
+				}
+				.next-isActive{
+					color: $subTextCol;
+				}
+			}
+        }
+	}
+}

@@ -1,0 +1,367 @@
+$Black: #000;
+$White: #fff;
+$Blue: #00b9f5;
+$DBlue: #012b72;
+// $Red: #ff4b55;
+// $Yellow: #f5a623;
+// $Green: #21c17a;
+$Orange: #ffa400;
+$borderCol: #ebebeb;
+$DBlack: #182233;
+$LGrey: #999;
+$TextCol: #222;
+// $subTextCol: #7b93b4;
+$DGrey: #444;
+$LBlack: #333;
+$greyBG: #fafcfb;
+$insuText: #f05a22;
+$GreyBorder: #e6ebf3;
+$LBlue: #deeaee;
+
+
+$Green: #00C673;
+$Yellow: #FF9E00;
+$Red: #FF4B55;
+$subTextCol: #536E92;
+$SectionBG: #f6f8fc;
+
+.clear {
+  clear: both;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disFlex {
+  display: flex;
+}
+
+.flexDisRow {
+  flex-direction: row;
+}
+
+.flexDisCol {
+  flex-direction: column;
+}
+
+.overHidden {
+  overflow: hidden;
+}
+
+.posAbo {
+  position: absolute;
+}
+
+.posRel {
+  position: relative;
+}
+
+.posFix {
+  position: fixed;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.inBlock {
+  display: inline-block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.whiteBG {
+  background: $White;
+}
+
+.blueBG {
+  background: $DBlue;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+//Adding New Mixin Kavita Start
+.row {
+  @extend .disFlex;
+  @extend .flexDisRow;
+}
+
+.col {
+  @extend .disFlex;
+  @extend .flexDisCol;
+}
+
+.BB {
+  border-bottom: 1px solid $borderCol;
+}
+
+.Bfull {
+  border: 1px solid $borderCol;
+}
+
+.BT {
+  border-top: 1px solid $borderCol;
+}
+
+.noPadding{
+  padding: 0;
+}
+
+.noMargin{
+  margin: 0;
+}
+
+.overHidden {
+  overflow: hidden;
+}
+
+.posRel {
+  position: relative;
+}
+
+.posAbo {
+  position: absolute;
+}
+
+@mixin fontStyle($size: false, $color: false, $weight: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin ellipsis($line) {
+  // lines: $line;
+  text-overflow: ellipsis;
+}
+
+@mixin align($content, $items) {
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fontIcon($size, $color: false) {
+  font-size: $size;
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin padd($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin marg($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+//Adding New Mixing Kavita End
+@mixin textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bShadow($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($pixels) {
+  opacity: $pixels;
+}
+
+@mixin padd($pixels) {
+  padding: $pixels;
+}
+
+@mixin marg($pixels) {
+  margin: $pixels;
+}
+
+@mixin pos($type) {
+  position: $type;
+}
+
+@mixin fWeight($fWeight) {
+  font-weight: $fWeight;
+}
+
+@mixin fSize($fSize) {
+  font-size: $fSize;
+}
+
+@mixin lHeight($lHeight) {
+  line-height: $lHeight;
+}
+
+@mixin bTop($value) {
+  border-top: $value;
+}
+
+@mixin display($type) {
+  display: $type;
+}
+
+@mixin tAlign($type) {
+  text-align: $type;
+}
+
+@mixin overflow($type) {
+  overflow: $type;
+}
+
+@mixin tTransform($type) {
+  text-transform: $type;
+}
+
+@mixin tDecor($type) {
+  text-decoration: $type;
+}
+
+@mixin zIndex($zIndex) {
+  z-index: $zIndex;
+}
+
+@mixin bg-pos($pos) {
+  background-position: $pos;
+}
+
+@mixin top($value) {
+  top: $value;
+}
+
+@mixin bottom($value) {
+  bottom: $value;
+}
+
+@mixin left($value) {
+  left: $value;
+}
+
+@mixin right($value) {
+  right: $value;
+}
+
+//Mixins for creating more color from the base colors defined in framework
+
+@mixin bg-opacity($color, $opacity) {
+  background: rgba($color, $opacity);
+}
+.noBorder {
+  border: 0 !important;
+}
+
+
+.select-wrap-V2 {
+    height: 38px;
+    .select-box {
+        @include padd(0);
+        &__option {
+            position: static;
+            &-selected {
+                @include padd(10px 16px 0 16px);
+                .arrow {
+                    cursor: pointer;
+                    @include position(absolute, false, 17px, 12px, false);
+                    transform: rotate(-90deg);
+                    i {
+                        border: none;
+                        @include fontStyle(24px, $subTextCol, 700);
+                    }
+                }
+                &-text {
+                    overflow: visible;
+                    @include fontStyle(14px, $DBlack, 700);
+                }
+            }
+
+            &-list-wrapper {
+                max-height: 192px;
+                overflow: auto;
+                @include position(absolute, 60px, false, false, 0);
+                @include border-radius(0 4px 4px 4px);
+                @extend .Bfull;
+                z-index: 10;
+                border-top: none;
+                background: $White;
+                width: 100%;
+                &-option {
+                    @include padd(14px 16px);
+                    @extend .BB;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+                
+            }
+        }
+        &-options-list {
+            @include bShadow(0 5px 13px 0 rgba(0, 0, 0, 0.14));
+            @include border-radius(2px);
+            @extend .Bfull;
+    
+            .selected-option {
+                @include fontStyle(14px, $DBlack, bold);
+            }
+        }
+    }
+    
+
+    
+}
+.select-wrapper-disabled{
+    background-color: $SectionBG;
+}

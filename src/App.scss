@@ -1,0 +1,93 @@
+@mixin padd($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin marg($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin fontStyle($size: false, $color: false, $weight: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+
+
+
+
+
+.App {
+  &-header {
+    @media screen and (max-width: 480px) {
+        width: 185%;
+    }
+    background-color: #1F253F;
+    height: 46px;
+    padding: 20px;
+    color: white;
+    width: auto;;
+    &-item{
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+    }
+    &-logo {
+      height: 42px;
+    }
+    .App-title {
+      align-items: center;
+      &-one{
+        @include fontStyle(25px, false, normal)
+      }
+      &-two{
+        @include fontStyle(16px, pink, normal)
+      }
+    }
+  }
+  &-heading-wrapper{
+    @media screen and (max-width: 480px) {
+      width: 200%;
+  }
+    display: flex;
+    justify-content: space-between;
+    .App-heading{
+      @include padd(40px, 0, 40px, 6% );
+    @include fontStyle(33px, #1F253F, bold)
+    }
+    
+    
+  }
+  &-add-event{
+    @include padd(40px, 0, 20px, 6% );
+    @include fontStyle(20px, #1F253F, bold)
+  }
+  &-filter{
+    width: fit-content;
+    @include marg(0, 40px, 0, 6%);
+  }
+  &-form{
+    @include marg(0, 40px, 0, 6%);
+  }
+  &-content{
+    @include marg(0, 40px, 40px, 6%);
+  }
+
+  
+}
+
+
+
+
